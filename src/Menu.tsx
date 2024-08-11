@@ -1,6 +1,5 @@
 import { MenuItem } from "./data";
 import { useState } from "react";
-import { arrow } from "./arrow";
 
 export default function MenuItemComponent({ item }: { item: MenuItem }) {
   const [extend, setExtend] = useState(false);
@@ -11,7 +10,6 @@ export default function MenuItemComponent({ item }: { item: MenuItem }) {
 
   const listItems = item.children?.map((childItem) => (
     <li>
-      {" "}
       <MenuItemComponent item={childItem} />
     </li>
   ));
