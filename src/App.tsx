@@ -1,5 +1,5 @@
 import DATA from "./data.tsx";
-import MenuItemComponent from "./Menu.tsx";
+import MenuItemComponent from "./MenuItemComponent.tsx";
 
 function Sidebar() {
   return (
