@@ -1,5 +1,12 @@
 const LINK = "https://youtube.com/devtoolstech/videos";
 
+export type MenuItem = {
+  id: number;
+  label: string;
+  link: string;
+  children?: MenuItem[];
+};
+
 const IOS_ARTICLES = {
   id: 6,
   label: "iOS Articles",
@@ -78,7 +85,7 @@ const ACADEMIC_TECHNOLOGIES = {
   ],
 };
 
-const DATA = [
+const DATA: MenuItem[] = [
   {
     id: 1001,
     label: "Knowledge Base Articles",

@@ -1,34 +1,22 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import DATA from "./data.tsx";
+import Menu from "./Menu.tsx";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+function Sidebar() {
+  // const [count, setCount] = useState(0);
+  // console.log(DATA[0].children[0].label);
   return (
-    <>
+    <div>
+      <div>{DATA[0].label}</div>
+      {/* <div>{DATA[0].children[0].label}</div>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className="">
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+        <div>{DATA[0].children[0].children[0].label}</div>
+        <div>{DATA[0].children[0].children[1].label}</div>
+        <div>{DATA[0].children[0].children[2].label}</div>
+      </div> */}
+      <Menu items={DATA[0]} />
+    </div>
   );
 }
 
-export default App;
+export default Sidebar;
