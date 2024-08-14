@@ -17,7 +17,7 @@ export default function MenuItemComponent({ item }: { item: MenuItem }) {
 
   return (
     <div className="text-left">
-      <button onClick={handleClick} className="flex">
+      <button onClick={handleClick} className="flex items-center gap-2">
         <div className="text-white">
           {!item.children ? "•" : extend ? arrow : "›"}
         </div>
