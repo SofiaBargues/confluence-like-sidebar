@@ -1,6 +1,5 @@
 import DATA from "./data.tsx";
 import MenuItemComponent from "./MenuItemComponent.tsx";
-import { arrow } from "./arrow.tsx";
 
 function Sidebar() {
   return (
