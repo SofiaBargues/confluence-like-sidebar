@@ -1,50 +1,64 @@
-# React + TypeScript + Vite
+## Confluence-like Sidebar with Tree Structure
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Build a React component that renders a collapsible sidebar with a tree-like navigation UI.
 
-Currently, two official plugins are available:
+### Objective
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The goal is to create a sidebar menu where each node can be expanded or collapsed, similar to a Confluence knowledge base sidebar.
 
-## Expanding the ESLint configuration
+### Requirements
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- The data is provided by the backend through an API.
+- The menu should be collapsible.
+- Each node should be a link.
+- A node at any level can either have children or be a leaf/terminal node.
+- A node with children should show:
+  - A right caret icon when closed.
+  - A down caret icon when open.
+- Each level should be properly indented.
+- Each node’s text label should be underlined on hover.
 
-- Configure the top-level `parserOptions` property like this:
+### Mockups
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+#### Expanded Tree
+
+```txt
+⌄ Knowledge Base Articles
+  ⌄ Academic Technologies
+    • Lightboard
+    • OWL 360 Camera Tutorial
+    • ScreenPal
+  ⌄ Apple
+    ⌄ iOS Articles
+      • VPN with iOS
+      • Upgrade iOS
+    ⌄ Mac Articles
+      • Fix macOS
+      • Upgrade macOS
+    • Request License
+    • Purchase Apps
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+#### Partially Collapsed Tree
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```txt
+⌄ Knowledge Base Articles
+  ⌄ Academic Technologies
+    • Lightboard
+    • OWL 360 Camera Tutorial
+    • ScreenPal
+  ⌄ Apple
+    › iOS Articles
+    › Mac Articles
+    • Request License
+    • Purchase Apps
 ```
+
+#### Collapsed Tree
+
+```txt
+⌄ Knowledge Base Articles
+  › Academic Technologies
+  › Apple
+```
+
